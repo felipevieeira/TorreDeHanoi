@@ -1,18 +1,31 @@
-public class Torre 
-{
-    Pilha pilha;
-    Torre(int tamanho)
-    {
-        pilha = new Pilha(tamanho);
-    }
-    
-    void empilharDisco(Disco disco)
-    {
-        pilha.empilhar(disco.tamanhoDisco());
+public class Torre {
+    private Pilha pilha;
+
+    public Torre(int capacidade) {
+        this.pilha = new Pilha(capacidade);
     }
 
-    void desempilharDisco(Disco disco)
-    {
-        pilha.desempilhar(disco);
+    public void empilhar(Disco d) {
+        pilha.empilhar(d);
+    }
+
+    public Disco desempilhar() {
+        return pilha.desempilhar();
+    }
+
+    public Disco topo() {
+        return pilha.verTopo();
+    }
+
+    public boolean estaVazia() {
+        return pilha.pilhaVazia();
+    }
+
+    public int getQuantidade() {
+        return pilha.qtdElementos();
+    }
+
+    public void mostrar() {
+        pilha.mostrar();
     }
 }

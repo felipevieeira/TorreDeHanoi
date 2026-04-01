@@ -1,56 +1,56 @@
-public class Pilha 
-{
+public class Pilha {
 
-    private int [] p;
+    private Disco[] p;
     private int topo;
-    
-    Pilha(int tamanho) 
-    {
-        this.p = new int[tamanho];
+
+    public Pilha(int tamanho) {
+        this.p = new Disco[tamanho];
         this.topo = -1;
     }
-    
-    public boolean empilhar(int valor)
-    {
-        if(this.pilhaCheia())
+
+    public boolean empilhar(Disco d) {
+        if (pilhaCheia()) {
             return false;
-        this.p[++this.topo] = valor;
+        }
+        p[++topo] = d;
         return true;
-        
-    }
-    
-    public int desempilhar()
-    {
-        if(this.pilhaVazia())
-            return -1; //ERRO
-        return this.p[this.topo--];
     }
 
-    public int verTopo()
-    {
-        if(this.pilhaVazia())
-            return -1; // erro
-        return this.p[this.topo]; 
+    public Disco desempilhar() {
+        if (pilhaVazia()) {
+            return null;
+        }
+        return p[topo--];
     }
-    
-    public void exibirPilha()
-    {
-        for(int i = this.topo; i >= 0; i--)
-            System.out.println(this.p[i]);
+
+    public Disco verTopo() {
+        if (pilhaVazia()) {
+            return null;
+        }
+        return p[topo];
     }
-    
-    private boolean pilhaVazia()
-    {
-        if(this.topo == -1)
-            return true;
-        return false;
+
+    public boolean pilhaVazia() {
+        return topo == -1;
     }
-    
-    private boolean pilhaCheia()
-    {
-        if(this.topo == this.p.length-1)
-            return true;
-        return false;
+
+    public boolean pilhaCheia() {
+        return topo == p.length - 1;
     }
-    
+
+    public int qtdElementos() {
+        return topo + 1;
+    }
+
+    public void mostrar() {
+        if (pilhaVazia()) {
+            System.out.println("(vazia)");
+            return;
+        }
+
+        for (int i = topo; i >= 0; i--) {
+            System.out.print(p[i].tamanhoDisco() + " ");
+        }
+        System.out.println();
+    }
 }

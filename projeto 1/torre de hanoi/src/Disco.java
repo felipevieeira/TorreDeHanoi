@@ -1,13 +1,11 @@
-public class Disco 
-{
-    int tamanho;
-    Disco(int tamanho)
-    {
+public class Disco {
+    private int tamanho;
+
+    public Disco(int tamanho) {
         this.tamanho = tamanho;
     }
-    
-    int tamanhoDisco()
-    {
+
+    public int tamanhoDisco() {
         return tamanho;
     }
 }
