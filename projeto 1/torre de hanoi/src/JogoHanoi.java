@@ -8,12 +8,8 @@ public class JogoHanoi {
     private int qtdDiscos;
     private int movimentos;
 
-    private Scanner scanner;
-
-    public JogoHanoi() {
-        scanner = new Scanner(System.in);
-    }
-
+    Scanner scanner = new Scanner(System.in);
+    
     public static void main(String[] args) {
         JogoHanoi jogo = new JogoHanoi();
         jogo.iniciarJogo();
@@ -60,7 +56,7 @@ public class JogoHanoi {
                     iniciarJogo();
                     break;
                 case 4:
-                    System.out.println("Obrigado por utilizar o programa!");
+                    System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opcao invalida!");
